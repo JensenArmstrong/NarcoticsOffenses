@@ -5,10 +5,9 @@ library(dplyr)
 library(stringr)
 library(PGRdup)
 library(gender)
-library(ggplot2)
 
 ###IMPORT
-GenderedData <- read_csv("C:/Users/Jensen/Documents/_Professional/_Applications/_OJO Data Analyst/OJOGenderData.csv")
+GenderedData <- read_csv("OJOGenderData.csv")
 
 ###DEFINING DATAFRAMES
 ##drug-related offenses
@@ -157,7 +156,7 @@ PossessionType <-
 ##cleaning table
 PossessionType[is.na(PossessionType)] <- 0
 ##export DF
-write_csv(PossessionType, "C:/Users/Jensen/Documents/_Graduate/Multimedia Journalism/Dataframes/PossessionType.csv")
+write_csv(PossessionType, "PossessionType.csv")
 
 ##DISTRIBUTION
 DistributionDF <- DrugDF %>% 
@@ -298,7 +297,7 @@ DistributionType <-
 ##cleaning table
 DistributionType[is.na(DistributionType)] <- 0
 ##export DF
-write_csv(DistributionType,"C:/Users/Jensen/Documents/_Graduate/Multimedia Journalism/Dataframes/DistributionType.csv")
+write_csv(DistributionType,"DistributionType.csv")
 
 
 ##trafficking
@@ -440,7 +439,7 @@ TraffickingType <-
 ##cleaning table
 TraffickingType[is.na(TraffickingType)] <- 0
 ##export DF
-write_csv(TraffickingType,"C:/Users/Jensen/Documents/_Graduate/Multimedia Journalism/Dataframes/TraffickingType.csv")
+write_csv(TraffickingType,"TraffickingType.csv")
 
 ##MANUFACTURING
 ManufacturingDF <- DrugDF %>% 
@@ -581,7 +580,7 @@ ManufacturingType <-
 ##cleaning table
 ManufacturingType[is.na(ManufacturingType)] <- 0
 ##export DF
-write_csv(ManufacturingType,"C:/Users/Jensen/Documents/_Graduate/Multimedia Journalism/Dataframes/ManufacturingType.csv")
+write_csv(ManufacturingType,"ManufacturingType.csv")
 
 ##TOTALS
 TotalDF <- DrugDF %>% 
@@ -723,4 +722,4 @@ TotalType[is.na(TotalType)] <- 0
 TotalType <- TotalType %>% 
   subset(select = -c(FIPS))
 ###export DF
-write_csv(TotalType,"C:/Users/Jensen/Documents/_Graduate/Multimedia Journalism/Dataframes/TotalType.csv")
+write_csv(TotalType,"TotalType.csv")
